@@ -1,0 +1,19 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% load plotly_dash %}
+    <div class="{% plotly_class name='interactive' %} card" style="height: 100%; width: 100%; background: #fff; padding: 1rem;" >
+    {% plotly_app name='interactive' ratio=0.4%}
+    </div>
+    <div class="{% plotly_class name='MessivsRonaldo' %} card" style="height: 100%; width: 100%; background: #fff; padding: 1rem;" >
+    {% plotly_app name='MessivsRonaldo' ratio=0.5%}
+    </div>
+<br>
+    <div class="plot1" style="height: 100%; width: 100%; background:#fff;">
+        {{ df | safe }}
+    </div>
+    <br>
+    <div class="{% plotly_class name='owners' %} card" style="height: 100%; width: 100%; background: #fff; padding: 1rem;">
+    {% plotly_app name='owners' ratio=0.5%}
+    </div>
+{% endblock %}
